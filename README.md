@@ -49,8 +49,8 @@ mvn test
 
 ## 技术栈
 
-- Java 17
-- Maven 3.9+
+- Java 1.8 (Java 8)
+- Maven 3.8.6+
 - JUnit 5
 - 各模块特定的依赖库
 
