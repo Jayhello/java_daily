@@ -5,6 +5,9 @@ import java.net.*;
 
 /**
  * 简单的Socket服务器示例
+ * 
+ * 注意: 这是一个简单的示例，为了演示基本概念。
+ * 实际生产环境中应该使用线程池来处理并发客户端连接。
  */
 public class SimpleSocketServer {
     
