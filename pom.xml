@@ -19,6 +19,7 @@
         <module>log-examples</module>
         <module>network-examples</module>
         <module>util-examples</module>
+        <module>reflection-examples</module>
     </modules>
 
     <properties>
