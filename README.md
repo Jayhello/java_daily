@@ -30,6 +30,11 @@
 
 **主要依赖**: Apache Commons, Guava, Freemarker, Velocity
 
+### 6. reflection-examples - Java反射示例
+包含Java反射机制相关的示例代码，包括类信息获取、字段访问、方法调用、构造器使用、注解处理、数组操作、泛型处理和动态代理等。
+
+**主要依赖**: JDK标准库
+
 ## 构建项目
 
 ```bash
