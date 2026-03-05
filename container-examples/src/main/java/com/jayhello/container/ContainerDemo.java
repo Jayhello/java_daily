@@ -11,9 +11,15 @@ public class ContainerDemo {
         demoSimpleHashMap();
     }
 
+    private static String repeat(String s, int count) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < count; i++) sb.append(s);
+        return sb.toString();
+    }
+
     private static void demoInheritanceHierarchy() {
         System.out.println("【1】容器继承关系演示");
-        System.out.println("─".repeat(50));
+        System.out.println(repeat("─", 50));
 
         SimpleArrayList<String> arrayList = new SimpleArrayList<>();
         SimpleLinkedList<String> linkedList = new SimpleLinkedList<>();
@@ -35,7 +41,7 @@ public class ContainerDemo {
 
     private static void demoSimpleArrayList() {
         System.out.println("【2】SimpleArrayList（动态数组）演示");
-        System.out.println("─".repeat(50));
+        System.out.println(repeat("─", 50));
 
         SimpleArrayList<Integer> list = new SimpleArrayList<>();
 
@@ -68,7 +74,7 @@ public class ContainerDemo {
 
     private static void demoSimpleLinkedList() {
         System.out.println("【3】SimpleLinkedList（双向链表）演示");
-        System.out.println("─".repeat(50));
+        System.out.println(repeat("─", 50));
 
         SimpleLinkedList<String> list = new SimpleLinkedList<>();
 
@@ -91,7 +97,7 @@ public class ContainerDemo {
 
     private static void demoArrayListVsLinkedList() {
         System.out.println("【4】ArrayList vs LinkedList 性能对比（末尾追加 50000 次）");
-        System.out.println("─".repeat(50));
+        System.out.println(repeat("─", 50));
 
         int n = 50000;
 
@@ -131,7 +137,7 @@ public class ContainerDemo {
 
     private static void demoSimpleHashMap() {
         System.out.println("【5】SimpleHashMap（哈希表）演示");
-        System.out.println("─".repeat(50));
+        System.out.println(repeat("─", 50));
 
         SimpleHashMap<String, Integer> map = new SimpleHashMap<>();
 
