@@ -20,6 +20,7 @@
         <module>network-examples</module>
         <module>util-examples</module>
         <module>reflection-examples</module>
+        <module>container-examples</module>
     </modules>
 
     <properties>

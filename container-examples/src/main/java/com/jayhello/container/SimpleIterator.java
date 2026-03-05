@@ -1,0 +1,8 @@
+package com.jayhello.container;
+
+public interface SimpleIterator<E> {
+
+    boolean hasNext();
+
+    E next();
+}
