@@ -1,15 +1,10 @@
 package com.jayhello.container;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * SimpleArrayList 单元测试
- */
-@DisplayName("SimpleArrayList 测试")
 class SimpleArrayListTest {
 
     private SimpleArrayList<Integer> list;
@@ -20,14 +15,12 @@ class SimpleArrayListTest {
     }
 
     @Test
-    @DisplayName("新建列表应为空")
     void testInitiallyEmpty() {
         assertTrue(list.isEmpty());
         assertEquals(0, list.size());
     }
 
     @Test
-    @DisplayName("add 末尾追加元素")
     void testAddAppend() {
         list.add(1);
         list.add(2);
@@ -39,11 +32,10 @@ class SimpleArrayListTest {
     }
 
     @Test
-    @DisplayName("add(index) 在指定位置插入元素")
     void testAddAtIndex() {
         list.add(1);
         list.add(3);
-        list.add(1, 2); // 在中间插入
+        list.add(1, 2);
         assertEquals(3, list.size());
         assertEquals(1, list.get(0));
         assertEquals(2, list.get(1));
@@ -51,7 +43,6 @@ class SimpleArrayListTest {
     }
 
     @Test
-    @DisplayName("add(0) 在头部插入元素")
     void testAddAtHead() {
         list.add(2);
         list.add(0, 1);
@@ -61,7 +52,6 @@ class SimpleArrayListTest {
     }
 
     @Test
-    @DisplayName("set 替换指定位置元素并返回旧值")
     void testSet() {
         list.add(10);
         list.add(20);
@@ -71,7 +61,6 @@ class SimpleArrayListTest {
     }
 
     @Test
-    @DisplayName("remove(index) 删除指定下标元素")
     void testRemoveByIndex() {
         list.add(1);
         list.add(2);
@@ -84,7 +73,6 @@ class SimpleArrayListTest {
     }
 
     @Test
-    @DisplayName("remove(Object) 删除第一个匹配元素")
     void testRemoveByObject() {
         list.add(1);
         list.add(2);
@@ -96,7 +84,6 @@ class SimpleArrayListTest {
     }
 
     @Test
-    @DisplayName("contains 检查是否包含元素")
     void testContains() {
         list.add(5);
         assertTrue(list.contains(5));
@@ -104,7 +91,6 @@ class SimpleArrayListTest {
     }
 
     @Test
-    @DisplayName("indexOf 返回元素首次出现的下标")
     void testIndexOf() {
         list.add(10);
         list.add(20);
@@ -115,7 +101,6 @@ class SimpleArrayListTest {
     }
 
     @Test
-    @DisplayName("clear 清空所有元素")
     void testClear() {
         list.add(1);
         list.add(2);
@@ -125,7 +110,6 @@ class SimpleArrayListTest {
     }
 
     @Test
-    @DisplayName("toArray 返回包含所有元素的数组")
     void testToArray() {
         list.add(1);
         list.add(2);
@@ -138,7 +122,6 @@ class SimpleArrayListTest {
     }
 
     @Test
-    @DisplayName("iterator 可以正确遍历所有元素")
     void testIterator() {
         list.add(1);
         list.add(2);
@@ -152,9 +135,8 @@ class SimpleArrayListTest {
     }
 
     @Test
-    @DisplayName("超出容量时自动扩容")
     void testAutoGrow() {
-        int initial = list.capacity(); // 默认 10
+        int initial = list.capacity();
         for (int i = 0; i < initial + 1; i++) {
             list.add(i);
         }
@@ -163,7 +145,6 @@ class SimpleArrayListTest {
     }
 
     @Test
-    @DisplayName("下标越界抛出 IndexOutOfBoundsException")
     void testRangeCheck() {
         list.add(1);
         assertThrows(IndexOutOfBoundsException.class, () -> list.get(-1));
@@ -172,8 +153,8 @@ class SimpleArrayListTest {
     }
 
     @Test
-    @DisplayName("负数初始容量抛出 IllegalArgumentException")
     void testNegativeCapacity() {
         assertThrows(IllegalArgumentException.class, () -> new SimpleArrayList<>(-1));
     }
 }
+

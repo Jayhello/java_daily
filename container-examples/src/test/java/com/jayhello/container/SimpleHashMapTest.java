@@ -1,17 +1,12 @@
 package com.jayhello.container;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * SimpleHashMap 单元测试
- */
-@DisplayName("SimpleHashMap 测试")
 class SimpleHashMapTest {
 
     private SimpleHashMap<String, Integer> map;
@@ -22,14 +17,12 @@ class SimpleHashMapTest {
     }
 
     @Test
-    @DisplayName("新建映射应为空")
     void testInitiallyEmpty() {
         assertTrue(map.isEmpty());
         assertEquals(0, map.size());
     }
 
     @Test
-    @DisplayName("put/get 基本存取")
     void testPutAndGet() {
         map.put("a", 1);
         map.put("b", 2);
@@ -39,7 +32,6 @@ class SimpleHashMapTest {
     }
 
     @Test
-    @DisplayName("put 覆盖已有键并返回旧值")
     void testPutOverwrite() {
         assertNull(map.put("x", 10));
         Integer old = map.put("x", 20);
@@ -49,13 +41,11 @@ class SimpleHashMapTest {
     }
 
     @Test
-    @DisplayName("get 不存在的键返回 null")
     void testGetMissing() {
         assertNull(map.get("missing"));
     }
 
     @Test
-    @DisplayName("containsKey 正确识别键是否存在")
     void testContainsKey() {
         map.put("hello", 1);
         assertTrue(map.containsKey("hello"));
@@ -63,7 +53,6 @@ class SimpleHashMapTest {
     }
 
     @Test
-    @DisplayName("containsValue 正确识别值是否存在")
     void testContainsValue() {
         map.put("k", 42);
         assertTrue(map.containsValue(42));
@@ -71,7 +60,6 @@ class SimpleHashMapTest {
     }
 
     @Test
-    @DisplayName("remove 删除键并返回旧值")
     void testRemove() {
         map.put("key", 7);
         Integer removed = map.remove("key");
@@ -81,13 +69,11 @@ class SimpleHashMapTest {
     }
 
     @Test
-    @DisplayName("remove 不存在的键返回 null")
     void testRemoveMissing() {
         assertNull(map.remove("none"));
     }
 
     @Test
-    @DisplayName("clear 清空所有键值对")
     void testClear() {
         map.put("a", 1);
         map.put("b", 2);
@@ -98,7 +84,6 @@ class SimpleHashMapTest {
     }
 
     @Test
-    @DisplayName("keySet 返回所有键")
     void testKeySet() {
         map.put("x", 1);
         map.put("y", 2);
@@ -111,7 +96,6 @@ class SimpleHashMapTest {
     }
 
     @Test
-    @DisplayName("null 键支持")
     void testNullKey() {
         map.put(null, 0);
         assertTrue(map.containsKey(null));
@@ -121,9 +105,7 @@ class SimpleHashMapTest {
     }
 
     @Test
-    @DisplayName("触发扩容后数据仍正确")
     void testResizePreservesData() {
-        // 使用小容量和高负载因子，强制触发扩容
         SimpleHashMap<Integer, Integer> m = new SimpleHashMap<>(4, 0.75f);
         int count = 20;
         for (int i = 0; i < count; i++) {
@@ -136,7 +118,6 @@ class SimpleHashMapTest {
     }
 
     @Test
-    @DisplayName("大量键值对存取正确")
     void testLargeInsert() {
         int n = 1000;
         for (int i = 0; i < n; i++) {
@@ -149,7 +130,6 @@ class SimpleHashMapTest {
     }
 
     @Test
-    @DisplayName("非法参数抛出 IllegalArgumentException")
     void testInvalidArguments() {
         assertThrows(IllegalArgumentException.class,
                 () -> new SimpleHashMap<>(0, 0.75f));
@@ -157,3 +137,4 @@ class SimpleHashMapTest {
                 () -> new SimpleHashMap<>(16, -0.1f));
     }
 }
+

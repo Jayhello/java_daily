@@ -1,15 +1,10 @@
 package com.jayhello.container;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * SimpleLinkedList 单元测试
- */
-@DisplayName("SimpleLinkedList 测试")
 class SimpleLinkedListTest {
 
     private SimpleLinkedList<String> list;
@@ -20,14 +15,12 @@ class SimpleLinkedListTest {
     }
 
     @Test
-    @DisplayName("新建列表应为空")
     void testInitiallyEmpty() {
         assertTrue(list.isEmpty());
         assertEquals(0, list.size());
     }
 
     @Test
-    @DisplayName("add 末尾追加元素")
     void testAddAppend() {
         list.add("A");
         list.add("B");
@@ -39,7 +32,6 @@ class SimpleLinkedListTest {
     }
 
     @Test
-    @DisplayName("add(index) 在指定位置插入元素")
     void testAddAtIndex() {
         list.add("A");
         list.add("C");
@@ -51,7 +43,6 @@ class SimpleLinkedListTest {
     }
 
     @Test
-    @DisplayName("add(0) 在头部插入元素")
     void testAddAtHead() {
         list.add("B");
         list.add(0, "A");
@@ -61,7 +52,6 @@ class SimpleLinkedListTest {
     }
 
     @Test
-    @DisplayName("set 替换指定位置元素并返回旧值")
     void testSet() {
         list.add("X");
         list.add("Y");
@@ -71,7 +61,6 @@ class SimpleLinkedListTest {
     }
 
     @Test
-    @DisplayName("remove(index) 删除指定下标元素")
     void testRemoveByIndex() {
         list.add("A");
         list.add("B");
@@ -84,7 +73,6 @@ class SimpleLinkedListTest {
     }
 
     @Test
-    @DisplayName("remove(Object) 删除第一个匹配元素")
     void testRemoveByObject() {
         list.add("A");
         list.add("B");
@@ -96,7 +84,6 @@ class SimpleLinkedListTest {
     }
 
     @Test
-    @DisplayName("contains 检查是否包含元素")
     void testContains() {
         list.add("hello");
         assertTrue(list.contains("hello"));
@@ -104,7 +91,6 @@ class SimpleLinkedListTest {
     }
 
     @Test
-    @DisplayName("indexOf 返回元素首次出现的下标")
     void testIndexOf() {
         list.add("A");
         list.add("B");
@@ -115,7 +101,6 @@ class SimpleLinkedListTest {
     }
 
     @Test
-    @DisplayName("clear 清空所有元素")
     void testClear() {
         list.add("A");
         list.add("B");
@@ -125,7 +110,6 @@ class SimpleLinkedListTest {
     }
 
     @Test
-    @DisplayName("toArray 返回包含所有元素的数组")
     void testToArray() {
         list.add("X");
         list.add("Y");
@@ -136,7 +120,6 @@ class SimpleLinkedListTest {
     }
 
     @Test
-    @DisplayName("iterator 可以正确遍历所有元素")
     void testIterator() {
         list.add("A");
         list.add("B");
@@ -150,7 +133,6 @@ class SimpleLinkedListTest {
     }
 
     @Test
-    @DisplayName("下标越界抛出 IndexOutOfBoundsException")
     void testRangeCheck() {
         list.add("A");
         assertThrows(IndexOutOfBoundsException.class, () -> list.get(-1));
@@ -159,7 +141,6 @@ class SimpleLinkedListTest {
     }
 
     @Test
-    @DisplayName("null 元素支持")
     void testNullElement() {
         list.add(null);
         list.add("A");
@@ -171,3 +152,4 @@ class SimpleLinkedListTest {
         assertEquals(1, list.size());
     }
 }
+
