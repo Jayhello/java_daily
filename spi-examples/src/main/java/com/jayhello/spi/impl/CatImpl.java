@@ -2,9 +2,6 @@ package com.jayhello.spi.impl;
 
 import com.jayhello.spi.Animal;
 
-/**
- * Animal SPI 实现：猫
- */
 public class CatImpl implements Animal {
 
     @Override

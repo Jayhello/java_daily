@@ -2,28 +2,22 @@ package com.jayhello.spi;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.ServiceLoader;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class SpiTest {
 
     @Test
-    void testServiceLoaderFindsExactlyTwoImplementations() {
-        ServiceLoader<Animal> loader = ServiceLoader.load(Animal.class);
-        List<Animal> animals = new ArrayList<>();
-        for (Animal animal : loader) {
-            animals.add(animal);
-        }
+    void testCustomLoaderFindsExactlyTwoImplementations() {
+        List<Animal> animals = CustomServiceLoader.load(Animal.class).loadAll();
         assertEquals(2, animals.size());
     }
 
     @Test
     void testAllImplementationsReturnNonNullName() {
-        ServiceLoader<Animal> loader = ServiceLoader.load(Animal.class);
-        for (Animal animal : loader) {
+        List<Animal> animals = CustomServiceLoader.load(Animal.class).loadAll();
+        for (Animal animal : animals) {
             assertNotNull(animal.getName());
             assertFalse(animal.getName().isEmpty());
         }
@@ -31,8 +25,8 @@ class SpiTest {
 
     @Test
     void testAllImplementationsReturnNonNullSound() {
-        ServiceLoader<Animal> loader = ServiceLoader.load(Animal.class);
-        for (Animal animal : loader) {
+        List<Animal> animals = CustomServiceLoader.load(Animal.class).loadAll();
+        for (Animal animal : animals) {
             assertNotNull(animal.sound());
             assertFalse(animal.sound().isEmpty());
         }
@@ -53,8 +47,8 @@ class SpiTest {
     }
 
     private Animal findAnimalByName(String name) {
-        ServiceLoader<Animal> loader = ServiceLoader.load(Animal.class);
-        for (Animal animal : loader) {
+        List<Animal> animals = CustomServiceLoader.load(Animal.class).loadAll();
+        for (Animal animal : animals) {
             if (name.equals(animal.getName())) {
                 return animal;
             }
