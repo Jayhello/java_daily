@@ -21,6 +21,7 @@
         <module>util-examples</module>
         <module>reflection-examples</module>
         <module>container-examples</module>
+        <module>spi-examples</module>
     </modules>
 
     <properties>
