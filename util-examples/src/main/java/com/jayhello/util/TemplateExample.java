@@ -10,6 +10,7 @@ public class TemplateExample {
         List<Integer> intList = new ArrayList<Integer>();
         System.out.println(strList.getClass()); // 都输出class java.util.ArrayList
         System.out.println(intList.getClass());
+
     }
 
     public static void case2() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
